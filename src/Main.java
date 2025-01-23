@@ -1,6 +1,9 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 public class Main {
     //ф-я для 1 задачи 2 файл
     public static int maxch(int a, int b) {
@@ -17,6 +20,124 @@ public class Main {
         }
         return a / b;
     }
+    //ф-я для 3 задачи 2 файл
+    public static int convert(String str) {
+        return Integer.parseInt(str);
+    }
+    //ф-я для 4 задачи 2 файл
+    public static int vozrast(int a){
+        if(a>0 && a<150){
+            return a;
+        }else{
+            throw new IllegalArgumentException("Возраст неверный");
+        }
+    }
+    //ф-я для 5 задачи 2 файл
+    public static double square(double num) {
+        if (num < 0) {
+            throw new IllegalArgumentException("Невозможно вычислить квадратный корень");
+        }
+        return Math.sqrt(num);
+    }
+    //ф-я для 6 задачи 2 файл
+    public static int factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Факториал не определён");
+        }
+        int res = 1;
+        for (int i = 1; i <= n; i++) {
+            res *= i;
+        }
+        return res;
+    }
+    //ф-я для 7 задачи 2 файл
+    public static void zeros(int[] array) {
+        for (int value : array) {
+            if (value == 0) {
+                throw new IllegalArgumentException("Массив содержит нули");
+            }
+        }
+    }
+    //ф-я для 8 задачи 2 файл
+    public static double power(double base, int exp) {
+        if (exp < 0) {
+            throw new IllegalArgumentException("Степень не может быть отрицательной");
+        }
+        return Math.pow(base, exp);
+    }
+    //ф-я для 9 задачи 2 файл
+    public static String string(String input, int len) {
+        if (len > input.length()) {
+            throw new IllegalArgumentException("Длина обрезки превышает длину строки");
+        }
+        return input.substring(0, len);
+    }
+    //ф-я для 10 задачи 2 файл
+    public static int findel(int[] arr, int t) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == t) {
+                return i;
+            }
+        }
+        throw new IllegalArgumentException("Элемент " + t+ " не найден");
+    }
+
+    //ф-я для 11 задачи 2 файл
+    public static String toBinary(int num) {
+        if (num < 0) {
+            throw new IllegalArgumentException("Число не должно быть отрицательным");
+        }
+        return Integer.toBinaryString(num);
+    }
+    //ф-я для 12 задачи 2 файл
+    public static boolean isDivisible(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Деление на ноль невозможно");
+        }
+        return a % b == 0;
+    }
+
+    //ф-я для 14 задачи 2 файл
+    public static void password(String password) {
+        if (password == null || password.length() < 8) {
+            throw new IllegalArgumentException("Пароль должен содержать не менее 8 символов");
+        }
+    }
+    //ф-я для 15 задачи 2 файл
+    public static void Date(String date) {
+        DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate.parse(date, forma);
+    }
+    //ф-я для 16 задачи 2 файл
+    public static String concatenate(String s1, String s2) {
+        if (s1 == null || s2 == null) {
+            throw new NullPointerException("Одна из строк пустая");
+        }
+        return s1 + s2;
+    }
+    //ф-я для 17 задачи 2 файл
+    public static int ostatok(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Делить на ноль нельзя");
+        }
+        return a % b;
+    }
+    //ф-я для 19 задачи 2 файл
+    public static double toFahrenheit(double celsi) {
+        if (celsi < -273.15) {
+            throw new IllegalArgumentException("Температура не может быть ниже абсолютного нуля");
+        }
+        return celsi * 9 / 5 + 32;
+    }
+    //ф-я для 20 задачи 2 файл
+    public static void checkStr(String str) {
+        if (str == null || str.isEmpty()) {
+            throw new IllegalArgumentException("Строка не может быть пустой");
+        }
+    }
+
+
+
 
     public static void main(String[] args) {
 
@@ -317,6 +438,135 @@ public class Main {
 //        }
 
         //задача 3
-        git add .git commit -m "Merge changes from remote repository"
+//        String validString = "123";
+//        String invalidString = "abc";
+//        try {
+//            int result = convert(validString);
+//            System.out.print("Результат: " + result);
+//        } catch (NumberFormatException e) {
+//            System.out.print("Ошибка: строка не может быть преобразована в число.  ");
+//        }
+//        try {
+//            int result = convert(invalidString);
+//            System.out.print("Результат: " + result);
+//        } catch (NumberFormatException e) {
+//            System.out.print("Ошибка: строка не может быть преобразована в число.");
+//        }
+        //задача 4
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите возраст: ");
+//        int a = scanner.nextInt();
+//        try {
+//            vozrast(a);
+//            System.out.print(a + " - возраст");
+//        } catch (IllegalArgumentException e) {
+//            System.out.print(e.getMessage());
+//        }
+        //задача 5
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите число: ");
+//        int a = scanner.nextInt();
+//        try {
+//            square(a);
+//            System.out.print(square(a) + " - корень");
+//        } catch (IllegalArgumentException e) {
+//            System.out.print(e.getMessage());
+//        }
+        //задача 6
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите число: ");
+//        int a = scanner.nextInt();
+//        try {
+//            System.out.println(factorial(a));
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 7
+//        try {
+//            int[] array = {1, 2, 3, 0, 5};
+//            zeros(array);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 8
+//        try {
+//            System.out.println(power(2, 3));
+//            System.out.println(power(5, -2));
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 9
+//        try {
+//            System.out.println(string("Привет", 3));
+//            System.out.println(string("Привет", 15));
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 10
+//        try {
+//            int[] arr = {1, 2, 3, 4, 5};
+//            int index = findel(arr, 3);
+//            System.out.println("Элемент найден на индексе: " + index);
+//            findel(arr, 6);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 11
+//        try {
+//            System.out.println(toBinary(10));
+//            System.out.println(toBinary(-5));
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 12
+//        try {
+//            System.out.println(isDivisible(10, 2));
+//            System.out.println(isDivisible(10, 0));
+//        } catch (ArithmeticException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 14
+//        try {
+//            password("secure123");
+//            password("123");
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 15
+//        try {
+//            Date("25.12.2025"); // Всё хорошо
+//            Date("31/02/2023"); // Исключение
+//        } catch (DateTimeParseException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 16
+//        try {
+//            System.out.println(concatenate("Hello", "Pasha"));
+//            System.out.println(concatenate(null, "fdf,l,"));
+//        } catch (NullPointerException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задача 17
+//        try {
+//            System.out.println(ostatok(10, 3));
+//            System.out.println(ostatok(10, 0));
+//        } catch (ArithmeticException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задание 19
+//        try {
+//            System.out.println(toFahrenheit(-274));
+//            System.out.println(toFahrenheit(0));
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //задание 20
+        try {
+            checkStr("");
+            checkStr(null);
+            checkStr("Hello");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
