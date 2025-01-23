@@ -317,6 +317,6 @@ public class Main {
 //        }
 
         //задача 3
-
+        git add .git commit -m "Merge changes from remote repository"
     }
 }
